@@ -70,7 +70,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.graphql-java</groupId>
-			<artifactId>graphiql-spring-boot-starter</artifactId>
+			<artifactId>voyager-spring-boot-starter</artifactId>
 			<version>${voyager}</version>
 			<scope>runtime</scope>
 		</dependency>
