@@ -15,6 +15,10 @@
 	<description>Graphql sample project</description>
 	<properties>
 		<java.version>11</java.version>
+		<graphql_springboot>5.0.2</graphql_springboot>
+		<graphiql>5.0.2</graphiql>
+		<graphql_java_tools>5.2.4</graphql_java_tools>
+		<voyager>11.1.0</voyager>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -24,6 +28,17 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-spring-boot-starter</artifactId>
+			<version>${graphql_springboot}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java-tools</artifactId>
+			<version>${graphql_java_tools}</version>
 		</dependency>
 
 		<dependency>
@@ -47,6 +62,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphiql-spring-boot-starter</artifactId>
+			<version>${graphiql}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.graphql-java-kickstart</groupId>
+			<artifactId>voyager-spring-boot-starter</artifactId>
+			<version>${voyager}</version>
+			<scope>runtime</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
