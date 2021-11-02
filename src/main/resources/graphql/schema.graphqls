@@ -2,6 +2,7 @@ type Query {
     helloWorld: String!
     parametrizedQuery(firstArgument: String!, secondArgument: String): String!
     message: Message!
+    someArray: [Int!]!
 }
 
 type Message{
