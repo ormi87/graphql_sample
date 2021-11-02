@@ -1,4 +1,10 @@
 type Query {
     helloWorld: String!
     parametrizedQuery(firstArgument: String!, secondArgument: String): String!
+    message: Message!
+}
+
+type Message{
+    id: ID!
+    text: String!
 }
