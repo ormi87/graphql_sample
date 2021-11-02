@@ -18,7 +18,7 @@
 		<graphql_springboot>5.0.2</graphql_springboot>
 		<graphiql>5.0.2</graphiql>
 		<graphql_java_tools>5.2.4</graphql_java_tools>
-		<voyager>11.1.0</voyager>
+		<voyager>5.0.2</voyager>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -69,7 +69,7 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.graphql-java-kickstart</groupId>
+			<groupId>com.graphql-java</groupId>
 			<artifactId>voyager-spring-boot-starter</artifactId>
 			<version>${voyager}</version>
 			<scope>runtime</scope>
