@@ -1,7 +1,7 @@
 package com.orzech.graphql.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.orzech.graphql.model.AuthorDto;
+import com.orzech.graphql.dto.AuthorDto;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;

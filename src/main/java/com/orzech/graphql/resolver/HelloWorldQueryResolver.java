@@ -1,7 +1,7 @@
 package com.orzech.graphql.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.orzech.graphql.model.MessageDto;
+import com.orzech.graphql.dto.MessageDto;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
