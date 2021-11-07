@@ -10,4 +10,6 @@ public interface AuthorService {
     public List<AuthorDto> getAuthors();
 
     AuthorDto getAuthorById(UUID authorId);
+
+    UUID createNewAuthor(AuthorDto author);
 }
