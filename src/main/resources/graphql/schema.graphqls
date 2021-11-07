@@ -4,6 +4,7 @@ type Query {
     message: Message!
     someArray: [Int!]!
     authors: [Author]!
+    recentPost(count: Int!, offset: Int!) : [Post]!
 }
 
 type Message {
