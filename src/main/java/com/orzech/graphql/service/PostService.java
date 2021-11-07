@@ -11,4 +11,6 @@ public interface PostService {
     public List<PostDto> findAll();
 
     List<PostDto> getRecentPost(Integer count, Integer offset);
+
+    UUID createNewPost(PostDto post);
 }

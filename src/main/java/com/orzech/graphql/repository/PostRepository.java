@@ -1,5 +1,6 @@
 package com.orzech.graphql.repository;
 
+import com.orzech.graphql.dto.PostDto;
 import com.orzech.graphql.model.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
