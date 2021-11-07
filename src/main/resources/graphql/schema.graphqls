@@ -9,6 +9,15 @@ type Query {
 
 type Mutation {
     createAuthor(author: AuthorInput!): ID!
+    createPost(post: PostInput): ID!
+}
+
+input PostInput {
+    title: String!
+    description: String!
+    category: String!
+    authorId: ID!
+
 }
 
 input AuthorInput{
