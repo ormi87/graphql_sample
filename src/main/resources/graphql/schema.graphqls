@@ -7,6 +7,15 @@ type Query {
     recentPost(count: Int!, offset: Int!) : [Post]!
 }
 
+type Mutation {
+    createAuthor(author: AuthorInput!): ID!
+}
+
+input AuthorInput{
+    name: String!
+    email: String!
+}
+
 type Message {
     id: ID!
     text: String!

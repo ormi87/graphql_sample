@@ -50,12 +50,12 @@ public class PostServiceImpl implements PostService {
                     .category(post.getCategory())
                     .authorId(post.getAuthor().getId())
                     .build();
-        } ).collect(Collectors.toList());
+        }).collect(Collectors.toList());
     }
 
     @Override
     public List<PostDto> getRecentPost(Integer count, Integer offset) {
-        Pageable pageable = PageRequest.of(offset ,count);
+        Pageable pageable = PageRequest.of(offset, count);
         Page<Post> all = postRepository.findAll(pageable);
 
         return all.stream().map(post -> {
@@ -66,7 +66,6 @@ public class PostServiceImpl implements PostService {
                     .category(post.getCategory())
                     .authorId(post.getAuthor().getId())
                     .build();
-        } ).collect(Collectors.toList());
-
+        }).collect(Collectors.toList());
     }
 }
