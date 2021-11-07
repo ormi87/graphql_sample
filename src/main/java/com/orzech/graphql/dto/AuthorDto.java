@@ -1,4 +1,4 @@
-package com.orzech.graphql.model;
+package com.orzech.graphql.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,8 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MessageDto {
+public class AuthorDto {
     private UUID id;
-    private String text;
+    private String name;
+    private String email;
 }
