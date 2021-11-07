@@ -7,4 +7,8 @@ import java.util.UUID;
 
 public interface PostService {
     public List<PostDto> findAllPostsByAuthorId(UUID authorId);
+
+    public List<PostDto> findAll();
+
+    List<PostDto> getRecentPost(Integer count, Integer offset);
 }
