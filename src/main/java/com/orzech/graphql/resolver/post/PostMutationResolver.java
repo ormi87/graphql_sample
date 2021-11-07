@@ -1,4 +1,4 @@
-package com.orzech.graphql.resolver;
+package com.orzech.graphql.resolver.post;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.orzech.graphql.dto.PostDto;

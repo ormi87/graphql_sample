@@ -1,4 +1,4 @@
-package com.orzech.graphql.resolver;
+package com.orzech.graphql.resolver.author;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.orzech.graphql.dto.AuthorDto;
