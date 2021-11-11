@@ -1,0 +1,5 @@
+query{
+    recentPost(count:3, offset:0){
+        id
+    }
+}

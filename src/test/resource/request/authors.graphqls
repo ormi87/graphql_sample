@@ -1,0 +1,13 @@
+query{
+    authors {
+        id
+        name
+        posts{
+            title
+            author{
+                email
+            }
+
+        }
+    }ó
+}
