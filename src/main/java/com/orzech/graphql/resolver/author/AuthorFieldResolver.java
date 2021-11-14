@@ -4,20 +4,21 @@ import com.coxautodev.graphql.tools.GraphQLResolver;
 import com.orzech.graphql.dto.AuthorDto;
 import com.orzech.graphql.dto.CommentDto;
 import com.orzech.graphql.dto.PostDto;
+import com.orzech.graphql.service.CommentService;
 import com.orzech.graphql.service.PostService;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.UUID;
 
 @Component
 public class AuthorFieldResolver implements GraphQLResolver<AuthorDto> {
 
     private final PostService postService;
+    private final CommentService commentService;
 
-    public AuthorFieldResolver(PostService postService) {
+    public AuthorFieldResolver(PostService postService, CommentService commentService) {
         this.postService = postService;
+        this.commentService = commentService;
     }
 
     public List<PostDto> posts(AuthorDto authorDto) {
@@ -36,9 +37,11 @@ public class AuthorFieldResolver implements GraphQLResolver<AuthorDto> {
     }
 
     public List<CommentDto> comments(AuthorDto authorDto, Integer lastComments) {
-        return Collections.singletonList(CommentDto.builder()
-                .id(UUID.randomUUID())
-                .text("Some random text")
-                .build());
+        return commentService.getNLastAuthorComments(authorDto.getId(), lastComments);
+//        return Collections.singletonList(CommentDto.builder()
+//                .id(UUID.randomUUID())
+//                .text("Some random text")
+//                .build());
+
     }
 }

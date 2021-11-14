@@ -14,4 +14,5 @@ import java.util.UUID;
 public class CommentDto {
     private UUID id;
     private String text;
+    private UUID authorId;
 }
