@@ -4,12 +4,14 @@ import com.orzech.graphql.dto.CommentDto;
 import com.orzech.graphql.model.Comment;
 import com.orzech.graphql.repository.CommentRepository;
 import com.orzech.graphql.service.CommentService;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class CommentServiceImpl implements CommentService {
@@ -45,6 +47,21 @@ public class CommentServiceImpl implements CommentService {
                             .text(comment.getText())
                             .authorId(comment.getAuthor().getId())
                             .postId(postId)
+                            .build();
+                }).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<CommentDto> getNLastComments(Integer count, Integer offset) {
+        Page<Comment> all = commentRepository.findAll(PageRequest.of(offset, count));
+
+        return all.stream()
+                .map(comment -> {
+                    return CommentDto.builder()
+                            .id(comment.getId())
+                            .text(comment.getText())
+                            .authorId(comment.getAuthor().getId())
+                            .postId(comment.getPost().getId())
                             .build();
                 }).collect(Collectors.toList());
     }
