@@ -1,5 +1,6 @@
 package com.orzech.graphql.service;
 
+import com.orzech.graphql.dto.CommentDto;
 import com.orzech.graphql.dto.PostDto;
 
 import java.util.List;

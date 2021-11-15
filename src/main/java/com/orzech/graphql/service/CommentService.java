@@ -9,4 +9,5 @@ import java.util.UUID;
 public interface CommentService {
 
     public List<CommentDto> getNLastAuthorComments(UUID authorId, Integer lastComments);
+    public List<CommentDto> getNLastPostComments(UUID postId, Integer lastComments);
 }

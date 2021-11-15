@@ -1,9 +1,12 @@
 package com.orzech.graphql.service.impl;
 
+import com.orzech.graphql.dto.CommentDto;
 import com.orzech.graphql.dto.PostDto;
 import com.orzech.graphql.model.Author;
+import com.orzech.graphql.model.Comment;
 import com.orzech.graphql.model.Post;
 import com.orzech.graphql.repository.AuthorRepository;
+import com.orzech.graphql.repository.CommentRepository;
 import com.orzech.graphql.repository.PostRepository;
 import com.orzech.graphql.service.PostService;
 import org.springframework.data.domain.Page;
@@ -12,7 +15,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -21,10 +23,12 @@ public class PostServiceImpl implements PostService {
 
     private final PostRepository postRepository;
     private final AuthorRepository authorRepository;
+    private final CommentRepository commentRepository;
 
-    public PostServiceImpl(PostRepository postRepository, AuthorRepository authorRepository) {
+    public PostServiceImpl(PostRepository postRepository, AuthorRepository authorRepository, CommentRepository commentRepository) {
         this.postRepository = postRepository;
         this.authorRepository = authorRepository;
+        this.commentRepository = commentRepository;
     }
 
     @Override
