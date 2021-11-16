@@ -1,9 +1,7 @@
 package com.orzech.graphql.service.impl;
 
-import com.orzech.graphql.dto.CommentDto;
 import com.orzech.graphql.dto.PostDto;
 import com.orzech.graphql.model.Author;
-import com.orzech.graphql.model.Comment;
 import com.orzech.graphql.model.Post;
 import com.orzech.graphql.repository.AuthorRepository;
 import com.orzech.graphql.repository.CommentRepository;
@@ -97,5 +95,18 @@ public class PostServiceImpl implements PostService {
     @Override
     public Integer countAuthorPosts(UUID id) {
         return postRepository.findAllByAuthorId(id).size();
+    }
+
+    @Override
+    public PostDto findPost(UUID postId) {
+        Post post = postRepository.findById(postId).get();
+
+        return PostDto.builder()
+                .id(post.getId())
+                .title(post.getTitle())
+                .description(post.getDescription())
+                .category(post.getCategory())
+                .authorId(post.getAuthor().getId())
+                .build();
     }
 }

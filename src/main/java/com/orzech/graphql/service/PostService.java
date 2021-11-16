@@ -16,4 +16,6 @@ public interface PostService {
     UUID createNewPost(PostDto post);
 
     Integer countAuthorPosts(UUID id);
+
+    PostDto findPost(UUID postId);
 }
