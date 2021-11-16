@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -29,4 +30,7 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
+
+    @OneToMany(mappedBy = "post")
+    private Set<Comment> comments;
 }

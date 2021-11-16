@@ -5,4 +5,5 @@ type Query {
     someArray: [Int!]!
     authors: [Author]!
     recentPost(count: Int!, offset: Int!) : [Post]!
+    comments(count: Int!, offset: Int!): [Comment]!
 }
